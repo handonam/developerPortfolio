@@ -1,0 +1,36 @@
+*.sw*
+*~
+.git*
+.tmp/
+.settings/
+/.patches/
+
+# Logs and databases #
+######################
+*.log
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Editing Clients   #
+#####################
+.DS_Store
+/nbproject
+
+# Third party       #
+#####################
+bower_components/
+node_modules/
+.vagrant
+.sass-cache/
+.nodemon-find-ref
+
+rsync-exclude.txt

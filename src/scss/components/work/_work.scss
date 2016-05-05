@@ -1,3 +1,20 @@
+@keyframes darken {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .25;
+  }
+}
+@keyframes breathe {
+  from {
+    opacity: .6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .Work {
   padding: 50px 0;
   text-shadow: 5px 2px 15px #000;
@@ -63,33 +80,26 @@
 }
 
 .Work__CarouselButton {
-  border-top: 2px solid #fff;
-  height: 25px;
+  animation: breathe .5s infinite alternate;
+  border-top: 6px solid #fff;
+  border-radius: 4px;
+  height: 35px;
   position: absolute;
   top: calc(50% - (25px/2));
-  width: 25px;
+  width: 35px;
 }
   .Work__CarouselButton:hover {
     cursor: pointer;
   }
   .Work__CarouselButton--Next {
-    border-right: 2px solid #fff;
+    border-right: 6px solid #fff;
     transform: rotate(45deg);
     right: 15px;
   }
   .Work__CarouselButton--Prev {
-    border-left: 2px solid #fff;
+    border-left: 6px solid #fff;
     left: 15px;
     transform: rotate(-45deg);
-  }
-
-  @keyframes darken {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: .25;
-    }
   }
 
 .Work__Darkener {

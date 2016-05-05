@@ -3,9 +3,12 @@
 var app = require('angular').module('portfolio');
 
 app.config([
-  '$routeProvider', '$locationProvider',
-  function($routeProvider, $locationProvider) {
+  '$routeProvider', '$locationProvider', '$animateProvider',
+  function($routeProvider, $locationProvider, $animateProvider) {
     $locationProvider.html5Mode(true);
+
+    // prevent ng-animate on elements that toggle between show/hide
+    $animateProvider.classNameFilter(/^(?:(?!ng-animate-disabled).)*$/);
 
     // Specify routes to load our partials upon the given URLs
     $routeProvider

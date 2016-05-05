@@ -704,6 +704,46 @@ you have a reason for doing so. (They should normally end up in a new row.) */
     margin-top: 0;
     min-width: initial;
     padding: 6px 14px; } }
+@-webkit-keyframes animate-PathbuttonBounce--up {
+  0% {
+    -webkit-transform: translate3d(0, -5px, 0);
+            transform: translate3d(0, -5px, 0); }
+  50% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(0, -5px, 0);
+            transform: translate3d(0, -5px, 0); } }
+@keyframes animate-PathbuttonBounce--up {
+  0% {
+    -webkit-transform: translate3d(0, -5px, 0);
+            transform: translate3d(0, -5px, 0); }
+  50% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(0, -5px, 0);
+            transform: translate3d(0, -5px, 0); } }
+@-webkit-keyframes animate-PathbuttonBounce--down {
+  0% {
+    -webkit-transform: translate3d(0, 5px, 0);
+            transform: translate3d(0, 5px, 0); }
+  50% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 5px, 0);
+            transform: translate3d(0, 5px, 0); } }
+@keyframes animate-PathbuttonBounce--down {
+  0% {
+    -webkit-transform: translate3d(0, 5px, 0);
+            transform: translate3d(0, 5px, 0); }
+  50% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 5px, 0);
+            transform: translate3d(0, 5px, 0); } }
 .PathButton {
   color: #fff;
   line-height: 1;
@@ -711,13 +751,19 @@ you have a reason for doing so. (They should normally end up in a new row.) */
   text-align: center;
   text-decoration: none;
   width: 100%;
-  z-index: 1; }
+  z-index: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
 
 .PathButton--Next {
-  bottom: 25px; }
+  bottom: 25px;
+  -webkit-animation: animate-PathbuttonBounce--up 1s infinite;
+          animation: animate-PathbuttonBounce--up 1s infinite; }
 
 .PathButton--Back {
-  top: 25px; }
+  top: 25px;
+  -webkit-animation: animate-PathbuttonBounce--up 1s infinite;
+          animation: animate-PathbuttonBounce--up 1s infinite; }
 
 .PathButton--Back:before,
 .PathButton--Next:after {
@@ -847,6 +893,27 @@ you have a reason for doing so. (They should normally end up in a new row.) */
 .Page.ng-enter {
   z-index: 1; }
 
+@-webkit-keyframes darken {
+  from {
+    opacity: 0; }
+  to {
+    opacity: .25; } }
+
+@keyframes darken {
+  from {
+    opacity: 0; }
+  to {
+    opacity: .25; } }
+@-webkit-keyframes breathe {
+  from {
+    opacity: .6; }
+  to {
+    opacity: 1; } }
+@keyframes breathe {
+  from {
+    opacity: .6; }
+  to {
+    opacity: 1; } }
 .Work {
   padding: 50px 0;
   text-shadow: 5px 2px 15px #000;
@@ -900,38 +967,30 @@ you have a reason for doing so. (They should normally end up in a new row.) */
   text-align: center; }
 
 .Work__CarouselButton {
-  border-top: 2px solid #fff;
-  height: 25px;
+  -webkit-animation: breathe .5s infinite alternate;
+          animation: breathe .5s infinite alternate;
+  border-top: 6px solid #fff;
+  border-radius: 4px;
+  height: 35px;
   position: absolute;
   top: calc(50% - (25px/2));
-  width: 25px; }
+  width: 35px; }
 
 .Work__CarouselButton:hover {
   cursor: pointer; }
 
 .Work__CarouselButton--Next {
-  border-right: 2px solid #fff;
+  border-right: 6px solid #fff;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   right: 15px; }
 
 .Work__CarouselButton--Prev {
-  border-left: 2px solid #fff;
+  border-left: 6px solid #fff;
   left: 15px;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg); }
 
-@-webkit-keyframes darken {
-  from {
-    opacity: 0; }
-  to {
-    opacity: .25; } }
-
-@keyframes darken {
-  from {
-    opacity: 0; }
-  to {
-    opacity: .25; } }
 .Work__Darkener {
   background: #000;
   bottom: 0;
