@@ -1,0 +1,40 @@
+{
+  "name": "hanamdo-portfolio",
+  "version": "1.0.0",
+  "description": "Developer portfolio for Hanam Do",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/handonam/developerPortfolio.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Hanam Do",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/handonam/developerPortfolio/issues"
+  },
+  "homepage": "https://github.com/handonam/developerPortfolio#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "bourbon": "^4.2.7",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-route": "^1.5.5"
+  }
+}

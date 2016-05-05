@@ -1,0 +1,40 @@
+.PathButton {
+  color: #fff;
+  line-height: 1;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  z-index: 1;
+}
+
+.PathButton--Next {
+  bottom: 25px;
+}
+
+.PathButton--Back {
+  top: 25px;
+}
+
+  .PathButton--Back:before,
+  .PathButton--Next:after {
+    content: '';
+    display: block;
+    height: 5px;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    width: 5px;
+   }
+  .PathButton--Back:before {
+    border-right: 2px solid #fff;
+    border-top: 2px solid #fff;
+    margin-top: -5px
+  }
+  .PathButton--Next:after {
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+    margin-top: 5px;
+  }

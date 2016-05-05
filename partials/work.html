@@ -1,0 +1,52 @@
+<a class="PathButton PathButton--Back" href="/">Home</a>
+<section class="Work" ng-repeat="(workId, work) in works" bg-resize bg-image="" data-img-src="{{ ::work.bgUrl }}" data-bg-size="95">
+
+  <div class="Work__Darkener"></div>
+
+  <div class="s-Container">
+    <div class="s-Sixteen s-Column u-White s-Clearfix">
+      <h1 class="Work__Heading a-FadeIn">{{ work.name }}</h1>
+      <div class="Work__Status {{ status[workId].className }} a-FadeIn">
+        {{ status[workId].name }}
+      </div>
+      <a class="Work__Link a-FadeIn" href="{{ work.url }}">
+        <img class="Work__LinkImg" src="/images/components/works/works__link.svg" />
+      </a>
+      <p class="Work__Description a-FadeIn a--DelayOne">{{ work.description }}</p>
+    </div>
+  </div>
+
+  <div class="Work__Carousel a-FadeIn a--DelayThree">
+    <div class="Work__CarouselButton Work__CarouselButton--Prev"
+      ng-show="counter[workId] > 0"
+      ng-click="carouselPrev(workId)">
+    </div>
+
+    <div class="s-Container">
+      <figure class="s-Six s-Column">
+        <img class="Work__CarouselImage" ng-src="{{  work.accomplishments[counter[workId]].image.url }}"/>
+        <figcaption class="Work__CarouselImageCaption u-White">
+          <em>{{ work.accomplishments[counter[workId]].image.caption }}</em>
+        </figcaption>
+      </figure>
+      <div class="s-Ten s-Column u-White">
+        <div class="Work__Accomplishments">
+          <h4>{{ work.accomplishments[counter[workId]].title }}</h4>
+          <div class="Work__Skills">
+            <ul class="SkillsList s-Clearfix">
+              <li class="SkillsList__Item" ng-repeat="tech in work.accomplishments[counter[workId]].tech"> {{ tech }}</li>
+            </ul>
+          </div>
+          <p>{{ work.accomplishments[counter[workId]].description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="Work__CarouselButton  Work__CarouselButton--Next"
+      ng-show="work.accomplishments.length > counter[workId] + 1"
+      ng-click="carouselNext(workId)">
+    </div>
+
+  </div>
+</section>
+<a class="PathButton PathButton--Next" href="/contact">Contact</a>

@@ -1,0 +1,119 @@
+[
+  {
+    "name": "TakeLessons",
+    "statusId": 1,
+    "url": "https://takelessons.com",
+    "description": "A trusted online marketplace for finding qualified and vetted instructors.",
+    "bgUrl": "/images/components/works/works__bg--takelessons.jpg",
+    "accomplishments": [
+      {
+        "title": "Public facing redesign",
+        "description": "We redesigned TakeLessons.com to help us increase our leads and conversion rates. It required us to build our own split test mechanism to throttle our traffic to the new design, monitoring conversion reports every hour. We had to move critical SEO links from this old site to maintain our organic traffic, while preventing duplicate pages on search engines.",
+        "image": {
+          "caption": "Before landing page redesign",
+          "url": "/images/components/works/accomplishments/work__takelessons--publicredesign1.jpeg"
+        },
+        "tech": ["CSS3", "HTML5", "jQuery", "Symfony", "PHP", "Google Analytics"]
+      },
+      {
+        "title": "Public facing redesign",
+        "description": "Our research led us to certain design fundamentals including streamlined search UI, reduced clutter, strong site trustworthiness, and easier-to-understand \"How it works\" details. This required careful design and implementation using a grid system from SkeletonCSS. We also restructured the CSS from being a gigantic, 5000+ line flat file into a custom-built modular system (similar to CSS processors '@imports').",
+        "image": {
+          "caption": "After redesign",
+          "url": "/images/components/works/accomplishments/work__takelessons--publicredesign2.jpeg"
+        },
+        "tech": ["CSS3", "HTML5", "jQuery", "Symfony", "PHP", "Google Analytics"]
+      },
+      {
+        "title": "Public facing redesign",
+        "description": "We routinely performed on-site user tests with people we've selected off of Craigslist to understand their behaviors with our old and new designs, implementing changes weekly in response to their feedback.  We also used site analytics such as Google Analytics, Clicktale, Crazy Egg, and our own reporting to draw conclusions on what features needed improvement. ",
+        "image": {
+          "caption": "Instructors' profiles, before redesign",
+          "url": "/images/components/works/accomplishments/work__takelessons--publicredesign3.jpeg"
+        },
+        "tech": ["CSS3", "HTML5", "jQuery", "Symfony", "PHP", "Google Analytics"]
+      },
+      {
+        "title": "Public facing redesign",
+        "description": "Instructors depended on our ability to drive quality leads to them, and students depended on our ability to help them carefully select their ideal instructor. So we organized the instructors' profiles to strengthen details such as background checks, teaching availability, reviews, and location.",
+        "image": {
+          "caption": "Instructors' profiles, after redesign",
+          "url": "/images/components/works/accomplishments/work__takelessons--publicredesign4.jpeg"
+        },
+        "tech": ["CSS3", "HTML5", "jQuery", "Symfony", "PHP", "Google Analytics"]
+      },
+      {
+        "title": "Instructors Workflow",
+        "description": "We developed an instructor work application that helped us enroll teachers into our platform quickly.",
+        "image": {
+          "caption": "Form to allow instructors to choose what they want to teach",
+          "url": "/images/components/works/accomplishments/work__takelessons--setup1.jpeg"
+        },
+        "tech": ["CSS3", "HTML5", "jQuery", "Symfony", "PHP", "PostgreSQL"]
+      },
+      {
+        "title": "Instructors Workflow",
+        "description": "The questions balanced between simple questions to quickly onboard new instructors, and screening questions to weed out unqualified instructors.",
+        "image": {
+          "caption": "Instructor application requesting biography information",
+          "url": "/images/components/works/accomplishments/work__takelessons--setup2.jpeg"
+        },
+        "tech": ["CSS3", "HTML5", "jQuery", "Symfony", "PHP", "PostgreSQL"]
+      },
+      {
+        "title": "Instructors Workflow",
+        "description": "The application helped our internal team understand our supply and demand between the instructor and students. It also gave instructors some insight on teaching demand so they can better suit their skills to the market, a metric system that they'd never had before.",
+        "image": {
+          "caption": "Instructor application with metrics on student demand.",
+          "url": "/images/components/works/accomplishments/work__takelessons--setup3.jpeg"
+        },
+        "tech": ["CSS3", "HTML5", "jQuery", "Symfony", "PHP", "PostgreSQL"]
+      },
+      {
+        "title": "Student Management System",
+        "description": "We gave instructors the tools to be able to manage their students including scheduling, contact information, pricing rates, and account holders associated to a student.",
+        "image": {
+          "caption": "Student management page",
+          "url": "/images/components/works/accomplishments/work__takelessons--studentroster.jpeg"
+        },
+        "tech": ["CSS3", "HTML5", "jQuery", "Symfony", "PHP", "PostgreSQL"]
+      },
+      {
+        "title": "Gamification System",
+        "description": "An engagement system for teachers to drive user retention, allowing for them to be more actively serviceable to more leads and to their current students. I introduced AngularJS to the TakeLessons engineers, and trained them through workshops.  This led to the Gamification Widget (pictured) being the first production implementation using this new technology.",
+        "image": {
+          "caption": "Gamification widget",
+          "url": "/images/components/works/accomplishments/work__takelessons--gamification.jpeg"
+        },
+        "tech": ["AngularJs", "Symfony", "PHP", "PostgreSQL", "CSS3"]
+      }
+    ]
+  },
+  {
+    "name": "Pocketspace",
+    "statusId": 2,
+    "url": "https://pocketspace.co",
+    "description": "A social product-recommendation app that lets experts show products they love and recommend.",
+    "bgUrl": "/images/components/works/works__bg--pocketspace.jpg",
+    "accomplishments": [
+      {
+        "title": "Collection of products",
+        "description": "I created a fluid grid for products that a user wanted to present with. It required storing images into AWS S3, which triggered an image resize in AWS Lambda using streams.",
+        "image": {
+          "caption": "Collection of products that a person uses",
+          "url": "/images/components/works/accomplishments/work__pocketspace--profile.jpeg"
+        },
+        "tech": ["NodeJS", "ExpressJS", "SASS", "AWS", "PostgreSQL"]
+      },
+      {
+        "title": "User Authentication",
+        "description": "Social accounts, such as Twitter, were part of the plan to having users on our platform.  I utilized PassportJS to help me create a user authentication system.  I studied the security risks of storing information such as passwords and session information into the database, as well as well as determining what was needed for cryptography and encryption.",
+        "image": {
+          "caption": "User signup, including twitter login",
+          "url": "/images/components/works/accomplishments/work__pocketspace--accountLogin.jpeg"
+        },
+        "tech": ["NodeJS", "ExpressJS", "PostgreSQL", "MongoDB", "SSL/HTTPS", "PassportJS", "RESTful"]
+      }
+    ]
+  }
+]

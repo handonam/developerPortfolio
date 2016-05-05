@@ -1,0 +1,38 @@
+.Hero {
+  background: #55789A, url("/images/components/hero/hero__bg.jpg");
+  background-size: cover;
+  background-origin: content-box;
+  display: flex;
+}
+
+.Hero__Heading {
+  color: $white;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1;
+  margin: auto;
+  margin-left: 30px;
+  padding: 0 5%;
+  text-align: center;
+}
+.Hero__HeadingH1 {
+  font-weight: 600;
+}
+.Hero__HeadingP {
+  font-size: rem(12);
+  font-weight: 300;
+}
+
+.Hero__Location {
+  height: 15px;
+  vertical-align: middle;
+}
+
+@media (orientation: portrait) {
+  .Hero__Heading {
+    margin-left: auto;
+    text-shadow: 1px 1px 10px #000;
+  }
+  .Hero {
+    background-position-x: -400px;
+  }
+}

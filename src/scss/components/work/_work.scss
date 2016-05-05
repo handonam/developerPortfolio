@@ -1,0 +1,129 @@
+.Work {
+  padding: 50px 0;
+  text-shadow: 5px 2px 15px #000;
+  position: relative;
+}
+
+
+.Work__Description {
+  margin-bottom: 20px;
+}
+
+.Work__Link,
+.Work__Heading,
+.Work__Status {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.Work__Link {
+  color: $hotBlue;
+}
+.Work__LinkImg {
+  vertical-align: bottom;
+}
+
+.Work__Status {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 0 5px;
+  margin-left: 5px;
+}
+  .Work__Status--Inactive {
+    border-color: $lightGrey;
+    color: $lightGrey;
+  }
+  .Work__Status--Active {
+    border-color: $hotBlue;
+    color: $hotBlue;
+  }
+
+.Work__Skills {
+  margin-bottom: 20px;
+  text-shadow: none;
+}
+
+.Work__Accomplishments {
+}
+
+.Work__Carousel {
+  position: relative;
+}
+
+.Work__CarouselImage {
+  box-shadow: 5px 2px 41px #000;
+  display: block;
+  margin: auto;
+  max-height: 300px;
+  max-width: 100%;
+}
+.Work__CarouselImageCaption {
+  text-align: center;
+}
+
+.Work__CarouselButton {
+  border-top: 2px solid #fff;
+  height: 25px;
+  position: absolute;
+  top: calc(50% - (25px/2));
+  width: 25px;
+}
+  .Work__CarouselButton:hover {
+    cursor: pointer;
+  }
+  .Work__CarouselButton--Next {
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+    right: 15px;
+  }
+  .Work__CarouselButton--Prev {
+    border-left: 2px solid #fff;
+    left: 15px;
+    transform: rotate(-45deg);
+  }
+
+  @keyframes darken {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: .25;
+    }
+  }
+
+.Work__Darkener {
+  background: #000;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  animation: darken ease-in 1;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;  /* make things invisible upon start */
+}
+
+@media #{$mqDesktop}, #{$mqTabletPortrait} and (orientation: portrait) {
+  .Work {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+@media #{$mqMobile} {
+  .Work__CarouselImage {
+    display: block;
+    margin: 0 auto 15px;
+    max-width: 80%;
+  }
+}
+
+@media #{$mqMobile} and (orientation: portrait) {
+  .Work__Carousel {
+    margin-top: 20px;
+  }
+}

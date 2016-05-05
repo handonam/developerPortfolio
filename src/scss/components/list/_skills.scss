@@ -1,0 +1,40 @@
+.SkillsList {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.SkillsList__Item {
+  background: #fff;
+  color: #555;
+  display: inline-block;
+  height: 20px;
+  margin-bottom: 3px;
+  margin-left: 25px;
+  padding: 0 5px;
+  position: relative;
+  z-index: 1;
+}
+  .SkillsList__Item:after,
+  .SkillsList__Item:before {
+    content: '';
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+  }
+  .SkillsList__Item:before {
+    border-bottom: 20px solid white;
+    border-left: 20px solid transparent;
+    border-top: 20px solid transparent;
+    left: -20px;
+    top: -20px;
+  }
+  .SkillsList__Item:after {
+    border-bottom: 20px solid transparent;
+    border-left: 0 solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #fff;
+    right: -20px;
+  }
