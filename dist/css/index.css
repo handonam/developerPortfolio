@@ -963,8 +963,19 @@ you have a reason for doing so. (They should normally end up in a new row.) */
   max-height: 300px;
   max-width: 100%; }
 
+.Work__CarouselImage--Load {
+  opacity: .5; }
+
 .Work__CarouselImageCaption {
+  position: relative;
   text-align: center; }
+
+.Work__CarouselImageLoad {
+  height: 40px;
+  left: calc(50% - 20px);
+  position: absolute;
+  top: calc(50% - 20px);
+  width: 40px; }
 
 .Work__CarouselButton {
   -webkit-animation: breathe .5s infinite alternate;

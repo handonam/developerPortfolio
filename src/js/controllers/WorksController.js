@@ -3,9 +3,10 @@
 var angular = require('angular');
 
 module.exports = [
-  '$scope', 'worksResolver',
-  function ($scope, worksResolver) {
+  '$scope', 'worksResolver', 'ImageLoaderFactory',
+  function ($scope, worksResolver, ImageLoaderFactory) {
     $scope.works = worksResolver;
+    $scope.isLoading = false;
 
     // create a counter of each work's accomplishments.
     $scope.counter = [];
@@ -14,6 +15,7 @@ module.exports = [
       // initialize by starting the work accomplishments at index 0
       $scope.counter[workId] = 0;
 
+      // Set the status messages of each work
       $scope.status[workId] = {};
       switch(work.statusId) {
         case 1:
@@ -31,11 +33,24 @@ module.exports = [
       }
     });
 
+    // Preload the images before updating the counter for these carousel buttons
     $scope.carouselPrev = function(workId) {
-      $scope.counter[workId]--;
+      $scope.isLoading = true;
+
+      var imageUrl = $scope.works[workId].accomplishments[$scope.counter[workId] - 1].image.url;
+      ImageLoaderFactory.loadImage(imageUrl).then(function(){
+        $scope.isLoading = false;
+        $scope.counter[workId]--;
+      });
     }
     $scope.carouselNext = function(workId) {
-      $scope.counter[workId]++;
+      $scope.isLoading = true;
+
+      var imageUrl = $scope.works[workId].accomplishments[$scope.counter[workId] + 1].image.url;
+      ImageLoaderFactory.loadImage(imageUrl).then(function(){
+        $scope.isLoading = false;
+        $scope.counter[workId]++;
+      });
     }
   }
 ];

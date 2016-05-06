@@ -18,15 +18,18 @@
 
   <div class="Work__Carousel a-FadeIn a--DelayThree">
     <div class="Work__CarouselButton Work__CarouselButton--Prev ng-animate-disabled"
-      ng-show="counter[workId] > 0"
+      ng-show="!isLoading && (counter[workId] > 0)"
       ng-click="carouselPrev(workId)">
     </div>
 
     <div class="s-Container">
       <figure class="s-Six s-Column">
-        <img class="Work__CarouselImage" ng-src="{{  work.accomplishments[counter[workId]].image.url }}"/>
         <figcaption class="Work__CarouselImageCaption u-White">
+          <img class="Work__CarouselImage {{isLoading ? 'Work__CarouselImage--Load' : ''}}"
+            ng-src="{{  work.accomplishments[counter[workId]].image.url }}"/>
           <em>{{ work.accomplishments[counter[workId]].image.caption }}</em>
+          <img class="Work__CarouselImageLoad" src="/images/components/works/works__loading.svg"
+            ng-show="isLoading" />
         </figcaption>
       </figure>
       <div class="s-Ten s-Column u-White">
@@ -43,7 +46,7 @@
     </div>
 
     <div class="Work__CarouselButton Work__CarouselButton--Next ng-animate-disabled"
-      ng-show="work.accomplishments.length > counter[workId] + 1"
+      ng-show="!isLoading && (work.accomplishments.length > counter[workId] + 1)"
       ng-click="carouselNext(workId)">
     </div>
 

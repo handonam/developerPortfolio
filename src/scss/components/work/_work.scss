@@ -75,9 +75,20 @@
   max-height: 300px;
   max-width: 100%;
 }
-.Work__CarouselImageCaption {
-  text-align: center;
-}
+  .Work__CarouselImage--Load {
+    opacity: .5;
+  }
+  .Work__CarouselImageCaption {
+    position: relative;
+    text-align: center;
+  }
+  .Work__CarouselImageLoad {
+    height: 40px;
+    left: calc(50% - 20px);
+    position: absolute;
+    top: calc(50% - 20px);
+    width: 40px;
+  }
 
 .Work__CarouselButton {
   animation: breathe .5s infinite alternate;

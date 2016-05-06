@@ -36062,7 +36062,7 @@ require('./config');
 require('./controllers');
 require('./directives');
 
-},{"./config":6,"./constants":7,"./controllers":11,"./directives":15,"./factories":17,"angular-animate/angular-animate":1,"angular-route/angular-route":2,"angular/angular":3}],6:[function(require,module,exports){
+},{"./config":6,"./constants":7,"./controllers":11,"./directives":15,"./factories":18,"angular-animate/angular-animate":1,"angular-route/angular-route":2,"angular/angular":3}],6:[function(require,module,exports){
 'use strict';
 
 var app = require('angular').module('portfolio');
@@ -36129,9 +36129,10 @@ arguments[4][8][0].apply(exports,arguments)
 var angular = require('angular');
 
 module.exports = [
-  '$scope', 'worksResolver',
-  function ($scope, worksResolver) {
+  '$scope', 'worksResolver', 'ImageLoaderFactory',
+  function ($scope, worksResolver, ImageLoaderFactory) {
     $scope.works = worksResolver;
+    $scope.isLoading = false;
 
     // create a counter of each work's accomplishments.
     $scope.counter = [];
@@ -36140,6 +36141,7 @@ module.exports = [
       // initialize by starting the work accomplishments at index 0
       $scope.counter[workId] = 0;
 
+      // Set the status messages of each work
       $scope.status[workId] = {};
       switch(work.statusId) {
         case 1:
@@ -36157,11 +36159,24 @@ module.exports = [
       }
     });
 
+    // Preload the images before updating the counter for these carousel buttons
     $scope.carouselPrev = function(workId) {
-      $scope.counter[workId]--;
+      $scope.isLoading = true;
+
+      var imageUrl = $scope.works[workId].accomplishments[$scope.counter[workId] - 1].image.url;
+      ImageLoaderFactory.loadImage(imageUrl).then(function(){
+        $scope.isLoading = false;
+        $scope.counter[workId]--;
+      });
     }
     $scope.carouselNext = function(workId) {
-      $scope.counter[workId]++;
+      $scope.isLoading = true;
+
+      var imageUrl = $scope.works[workId].accomplishments[$scope.counter[workId] + 1].image.url;
+      ImageLoaderFactory.loadImage(imageUrl).then(function(){
+        $scope.isLoading = false;
+        $scope.counter[workId]++;
+      });
     }
   }
 ];
@@ -36289,11 +36304,47 @@ app.directive('project', require('./ProjectDirective'));
 },{"./BgImageDirective":12,"./BgResizeDirective":13,"./ProjectDirective":14,"angular":4}],16:[function(require,module,exports){
 'use strict';
 
+/**
+ * Preloads the image into a promise.
+ */
+module.exports = [
+  '$q', '$rootScope',
+  function($q, $rootScope) {
+    return {
+      /**
+       * @return {Promise}
+       */
+      loadImage: function(imageUrl) {
+        var image = new Image();
+        var deferred = $q.defer();
+
+        image.onerror = function() {
+          deferred.reject();
+        }
+        image.onload = function() {
+          deferred.resolve()
+        }
+        image.src = imageUrl;
+
+        return deferred.promise;
+      }
+    }
+  }
+];
+
+},{}],17:[function(require,module,exports){
+'use strict';
+
+/**
+ * Fetch the work data
+ */
 module.exports = [
   '$http', 'API_ROUTE',
-  function($http, API_ROUTE)
-  {
+  function($http, API_ROUTE) {
     return  {
+      /**
+       * @return {Object} JSON data of my work portfolio
+       */
       getWorks: function() {
         return $http.get(API_ROUTE.WORKS);
       }
@@ -36301,11 +36352,12 @@ module.exports = [
   }
 ];
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 'use strict';
 
 var app = require('angular').module('portfolio');
 
 app.factory('WorksFactory', require('./WorksFactory'));
+app.factory('ImageLoaderFactory', require('./ImageLoaderFactory'));
 
-},{"./WorksFactory":16,"angular":4}]},{},[5]);
+},{"./ImageLoaderFactory":16,"./WorksFactory":17,"angular":4}]},{},[5]);
