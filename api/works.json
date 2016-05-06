@@ -93,7 +93,7 @@
     "name": "Pocketspace",
     "statusId": 2,
     "url": "https://pocketspace.co",
-    "description": "A social product-recommendation app that lets experts show products they love and recommend.",
+    "description": "A social product-recommendation app that lets experts show products they love and recommend.  Currently in closed-beta.",
     "bgUrl": "/images/components/works/works__bg--pocketspace.jpg",
     "accomplishments": [
       {
@@ -103,7 +103,7 @@
           "caption": "Collection of products that a person uses",
           "url": "/images/components/works/accomplishments/work__pocketspace--profile.jpeg"
         },
-        "tech": ["NodeJS", "ExpressJS", "SASS", "AWS", "PostgreSQL"]
+        "tech": ["NodeJS", "ExpressJS", "AngularJS", "SASS", "AWS", "PostgreSQL"]
       },
       {
         "title": "User Authentication",
@@ -113,6 +113,15 @@
           "url": "/images/components/works/accomplishments/work__pocketspace--accountLogin.jpeg"
         },
         "tech": ["NodeJS", "ExpressJS", "PostgreSQL", "MongoDB", "SSL/HTTPS", "PassportJS", "RESTful"]
+      },
+      {
+        "title": "Product Adding",
+        "description": "I used ExpressJS on the back end to help me create API routes to do CRUD operations for products that users wanted to add.  This involved complex relationships with metadata such as storing names, tags, and collections where these products belong to. I used KnexJS/BookshelfJS to manage my object relationships and migrations, which worked well along with my PostgreSQL design.",
+        "image": {
+          "caption": "Product edit form",
+          "url": "/images/components/works/accomplishments/work__pocketspace--productAdd.jpeg"
+        },
+        "tech": ["NodeJS", "ExpressJS", "PostgreSQL", "AngularJS", "RESTful", "KnexJS/BookshelfJS", "Lodash"]
       }
     ]
   }
