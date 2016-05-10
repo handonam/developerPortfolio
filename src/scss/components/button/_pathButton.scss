@@ -1,66 +1,65 @@
-@keyframes animate-PathbuttonBounce--up {
+$pathButton--ring1size: 100px;
+$pathButton--ring2size: 110px;
+$pathButton--ring3size: 120px;
+
+@keyframes animate-PathbuttonGlow {
   0% {
-    transform: translate3d(0, -5px, 0);
+    box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0);
+  }
+  12% {
+    box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, .5);
   }
   50% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(0, -5px, 0);
-  }
-}
-@keyframes animate-PathbuttonBounce--down {
-  0% {
-    transform: translate3d(0, 5px, 0);
-  }
-  50% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(0, 5px, 0);
+    box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0);
   }
 }
 
 .PathButton {
+  animation: animate-PathbuttonGlow 4s infinite;
+  background-color: rgba(255, 255, 255, .25);
+  box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0);
+  border-radius: 100%;
   color: #fff;
-  line-height: 1;
+  height: $pathButton--ring1size;
+  left: calc(50% - #{$pathButton--ring1size} / 2);
+  margin: auto;
   position: absolute;
   text-align: center;
   text-decoration: none;
-  width: 100%;
+  width: $pathButton--ring1size;
   z-index: 1;
-  animation-fill-mode: forwards;
 }
+  .PathButton:after,
+  .PathButton:before {
+    animation: animate-PathbuttonGlow 4s infinite;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0);
+    content: '';
+    position: absolute;
+  }
+  .PathButton:after {
+    animation-delay: .5s;
+    height: $pathButton--ring3size;
+    left: calc(50% - ( #{$pathButton--ring3size} / 2 ));
+    top: calc(50% - ( #{$pathButton--ring3size} / 2));
+    width: $pathButton--ring3size;
+  }
+  .PathButton:before {
+    animation-delay: .25s;
+    height: $pathButton--ring2size;
+    left: calc(50% - ( #{$pathButton--ring2size} / 2 ));
+    top: calc(50% - ( #{$pathButton--ring2size} / 2) - .5px);
+    width: $pathButton--ring2size;
+  }
 
 .PathButton--Next {
-  bottom: 25px;
-  animation: animate-PathbuttonBounce--up 1s infinite;
+  bottom: 0;
+  line-height: calc(#{$pathButton--ring1size} - 50px);
+  margin-bottom: calc(-1 * #{$pathButton--ring1size} / 2 - 10px);
 }
 
 .PathButton--Back {
-  top: 25px;
-  animation: animate-PathbuttonBounce--up 1s infinite;
+  line-height: calc(#{$pathButton--ring1size} + 50px);
+  margin-top: calc(-1 * #{$pathButton--ring1size} / 2 - 10px);
+  top: 0;
 }
-
-  .PathButton--Back:before,
-  .PathButton--Next:after {
-    content: '';
-    display: block;
-    height: 5px;
-    left: 50%;
-    position: absolute;
-    text-align: center;
-    transform: rotate(-45deg);
-    transform-origin: 0 100%;
-    width: 5px;
-   }
-  .PathButton--Back:before {
-    border-right: 2px solid #fff;
-    border-top: 2px solid #fff;
-    margin-top: -5px
-  }
-  .PathButton--Next:after {
-    border-bottom: 2px solid #fff;
-    border-left: 2px solid #fff;
-    margin-top: 5px;
-  }

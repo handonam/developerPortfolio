@@ -704,90 +704,70 @@ you have a reason for doing so. (They should normally end up in a new row.) */
     margin-top: 0;
     min-width: initial;
     padding: 6px 14px; } }
-@-webkit-keyframes animate-PathbuttonBounce--up {
+@-webkit-keyframes animate-PathbuttonGlow {
   0% {
-    -webkit-transform: translate3d(0, -5px, 0);
-            transform: translate3d(0, -5px, 0); }
+    box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0); }
+  12% {
+    box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.5); }
   50% {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); }
-  100% {
-    -webkit-transform: translate3d(0, -5px, 0);
-            transform: translate3d(0, -5px, 0); } }
-@keyframes animate-PathbuttonBounce--up {
+    box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0); } }
+@keyframes animate-PathbuttonGlow {
   0% {
-    -webkit-transform: translate3d(0, -5px, 0);
-            transform: translate3d(0, -5px, 0); }
+    box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0); }
+  12% {
+    box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.5); }
   50% {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); }
-  100% {
-    -webkit-transform: translate3d(0, -5px, 0);
-            transform: translate3d(0, -5px, 0); } }
-@-webkit-keyframes animate-PathbuttonBounce--down {
-  0% {
-    -webkit-transform: translate3d(0, 5px, 0);
-            transform: translate3d(0, 5px, 0); }
-  50% {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); }
-  100% {
-    -webkit-transform: translate3d(0, 5px, 0);
-            transform: translate3d(0, 5px, 0); } }
-@keyframes animate-PathbuttonBounce--down {
-  0% {
-    -webkit-transform: translate3d(0, 5px, 0);
-            transform: translate3d(0, 5px, 0); }
-  50% {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); }
-  100% {
-    -webkit-transform: translate3d(0, 5px, 0);
-            transform: translate3d(0, 5px, 0); } }
+    box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0); } }
 .PathButton {
+  -webkit-animation: animate-PathbuttonGlow 4s infinite;
+          animation: animate-PathbuttonGlow 4s infinite;
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0);
+  border-radius: 100%;
   color: #fff;
-  line-height: 1;
+  height: 100px;
+  left: calc(50% - 100px / 2);
+  margin: auto;
   position: absolute;
   text-align: center;
   text-decoration: none;
-  width: 100%;
-  z-index: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards; }
+  width: 100px;
+  z-index: 1; }
+
+.PathButton:after,
+.PathButton:before {
+  -webkit-animation: animate-PathbuttonGlow 4s infinite;
+          animation: animate-PathbuttonGlow 4s infinite;
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0);
+  content: '';
+  position: absolute; }
+
+.PathButton:after {
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+  height: 120px;
+  left: calc(50% - ( 120px / 2 ));
+  top: calc(50% - ( 120px / 2));
+  width: 120px; }
+
+.PathButton:before {
+  -webkit-animation-delay: .25s;
+          animation-delay: .25s;
+  height: 110px;
+  left: calc(50% - ( 110px / 2 ));
+  top: calc(50% - ( 110px / 2) - .5px);
+  width: 110px; }
 
 .PathButton--Next {
-  bottom: 25px;
-  -webkit-animation: animate-PathbuttonBounce--up 1s infinite;
-          animation: animate-PathbuttonBounce--up 1s infinite; }
+  bottom: 0;
+  line-height: calc(100px - 50px);
+  margin-bottom: calc(-1 * 100px / 2 - 10px); }
 
 .PathButton--Back {
-  top: 25px;
-  -webkit-animation: animate-PathbuttonBounce--up 1s infinite;
-          animation: animate-PathbuttonBounce--up 1s infinite; }
-
-.PathButton--Back:before,
-.PathButton--Next:after {
-  content: '';
-  display: block;
-  height: 5px;
-  left: 50%;
-  position: absolute;
-  text-align: center;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  -webkit-transform-origin: 0 100%;
-          transform-origin: 0 100%;
-  width: 5px; }
-
-.PathButton--Back:before {
-  border-right: 2px solid #fff;
-  border-top: 2px solid #fff;
-  margin-top: -5px; }
-
-.PathButton--Next:after {
-  border-bottom: 2px solid #fff;
-  border-left: 2px solid #fff;
-  margin-top: 5px; }
+  line-height: calc(100px + 50px);
+  margin-top: calc(-1 * 100px / 2 - 10px);
+  top: 0; }
 
 .SkillsList {
   display: inline-block;
@@ -892,7 +872,8 @@ you have a reason for doing so. (They should normally end up in a new row.) */
   box-shadow: 0px 5px 40px #000;
   position: absolute;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  overflow: hidden; }
 
 .Page.ng-leave {
   -webkit-animation: animate-slideUp 2s both ease-in;
