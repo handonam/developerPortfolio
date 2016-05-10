@@ -761,11 +761,11 @@ you have a reason for doing so. (They should normally end up in a new row.) */
 
 .PathButton--Next {
   bottom: 0;
-  line-height: calc(100px - 50px);
+  line-height: 50px;
   margin-bottom: calc(-1 * 100px / 2 - 10px); }
 
 .PathButton--Back {
-  line-height: calc(100px + 50px);
+  line-height: 150px;
   margin-top: calc(-1 * 100px / 2 - 10px);
   top: 0; }
 
