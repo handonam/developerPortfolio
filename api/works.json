@@ -43,7 +43,7 @@
         "tech": ["CSS3", "HTML5", "jQuery", "Symfony", "PHP", "Google Analytics"]
       },
       {
-        "title": "Instructors Workflow",
+        "title": "Instructor Workflow",
         "description": "We developed an instructor work application that helped us enroll teachers into our platform quickly.",
         "image": {
           "caption": "Form to allow instructors to choose what they want to teach",
@@ -53,7 +53,7 @@
       },
       {
         "title": "Instructors Workflow",
-        "description": "The questions balanced between simple questions to quickly onboard new instructors, and screening questions to weed out unqualified instructors.",
+        "description": "The questions balanced between simple questions to quickly onboard new instructors and screening questions to weed out unqualified instructors.",
         "image": {
           "caption": "Instructor application requesting biography information",
           "url": "/images/components/works/accomplishments/work__takelessons--setup2.jpeg"
@@ -62,7 +62,7 @@
       },
       {
         "title": "Instructors Workflow",
-        "description": "The application helped our internal team understand our supply and demand between the instructor and students. It also gave instructors some insight on teaching demand so they can better suit their skills to the market, a metric system that they'd never had before.",
+        "description": "The application helped our internal team understand our supply and demand between the instructor and students. It also gave instructors insight on teaching demand through a newly created metric system so they could better tailor their offerings to what the market was demanding.",
         "image": {
           "caption": "Instructor application with metrics on student demand.",
           "url": "/images/components/works/accomplishments/work__takelessons--setup3.jpeg"
@@ -80,7 +80,7 @@
       },
       {
         "title": "Gamification System",
-        "description": "An engagement system for teachers to drive user retention, allowing for them to be more actively serviceable to more leads and to their current students. I introduced AngularJS to the TakeLessons engineers, and trained them through workshops.  This led to the Gamification Widget (pictured) being the first production implementation using this new technology.",
+        "description": "An engagement system for teachers to drive user retention, allowing for them to be more actively serviceable to more leads and to their current students. I introduced AngularJS to the TakeLessons engineers and trained them through workshops.  This led to the Gamification Widget (pictured) being the first production implementation using this new technology.",
         "image": {
           "caption": "Gamification widget",
           "url": "/images/components/works/accomplishments/work__takelessons--gamification.jpeg"
@@ -93,12 +93,12 @@
     "name": "Pocketspace",
     "statusId": 2,
     "url": "https://pocketspace.co",
-    "description": "A social product-recommendation app that lets experts show products they love and recommend.  Currently in closed-beta.",
+    "description": "A social product-recommendation app that lets experts promote products they love and recommend.  Currently in closed-beta.",
     "bgUrl": "/images/components/works/works__bg--pocketspace.jpg",
     "accomplishments": [
       {
-        "title": "Collection of products",
-        "description": "I created a fluid grid for products that a user wanted to present with. It required storing images into AWS S3, which triggered an image resize in AWS Lambda using streams.",
+        "title": "Product Pockets",
+        "description": "I created a fluid CSS grid to present a user's collection of products (known as pockets). It required storing images into AWS S3, which triggered an image resize in AWS Lambda using streams.",
         "image": {
           "caption": "Collection of products that a person uses",
           "url": "/images/components/works/accomplishments/work__pocketspace--profile.jpeg"
@@ -107,7 +107,7 @@
       },
       {
         "title": "User Authentication",
-        "description": "Social accounts, such as Twitter, were part of the plan to having users on our platform.  I utilized PassportJS to help me create a user authentication system.  I studied the security risks of storing information such as passwords and session information into the database, as well as well as determining what was needed for cryptography and encryption.",
+        "description": "Social accounts, such as Twitter, were part of the plan to having users on our platform.  I utilized PassportJS to help create a user authentication system.  I evaluated the security risks of storing information such as passwords and session information into the database, as well as well as determining what was needed for cryptography and encryption.",
         "image": {
           "caption": "User signup, including twitter login",
           "url": "/images/components/works/accomplishments/work__pocketspace--accountLogin.jpeg"
