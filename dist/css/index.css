@@ -55,6 +55,8 @@ table {
 
 html,
 body {
+  overflow-y: scroll;
+  overflow: -moz-scrollbars-vertical;
   height: 100%;
   width: 100%; }
 
@@ -840,8 +842,40 @@ you have a reason for doing so. (They should normally end up in a new row.) */
 
   .Hero {
     background-position-x: -200px; } }
+.Nav {
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #323232;
+  color: #fff;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  top: 0; }
+
+.Nav__Heading {
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
+
+.Nav__Item {
+  display: inline-block;
+  margin-left: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0); }
+
+.Nav__Item:hover {
+  border-bottom: 1px solid #ddd; }
+
+.Nav__Item--Active {
+  border-bottom: 1px solid #fff; }
+
 .Contact {
-  background: #bacdcf;
+  background: #323232;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
@@ -1040,6 +1074,9 @@ you have a reason for doing so. (They should normally end up in a new row.) */
 
 .u-TextCenter {
   text-align: center; }
+
+.u-Undecorate {
+  text-decoration: none; }
 
 .u-InlineBlock {
   display: inline-block; }

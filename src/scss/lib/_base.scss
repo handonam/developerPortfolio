@@ -4,6 +4,8 @@
 
 html,
 body {
+  overflow-y: scroll;
+  overflow: -moz-scrollbars-vertical;
   height: 100%;
   width: 100%;
 }

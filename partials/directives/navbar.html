@@ -1,0 +1,9 @@
+<nav class="Nav">
+  <h2 class="Nav__Heading"><a class="u-White u-Undecorate" href="/">Hanam Do</a></h2>
+  <ul class="Nav__List">
+    <li class="Nav__Item" ng-class="{'Nav__Item--Active': (path.url === activePath)}"
+      ng-repeat="path in paths">
+      <a class="u-White u-Undecorate" href="{{ path.url }}">{{ path.name }}</a>
+    </li>
+  </ul>
+</nav>

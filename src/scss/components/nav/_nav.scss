@@ -1,0 +1,29 @@
+.Nav {
+  align-items: center;
+  background: $greyTertiary;
+  color: #fff;
+  display: flex;
+  padding: 5px;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.Nav__Heading {
+  flex-grow: 1;
+}
+
+.Nav__Item {
+  display: inline-block;
+  margin-left: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0);
+}
+.Nav__Item:hover {
+  border-bottom: 1px solid #ddd;
+}
+
+.Nav__Item--Active {
+  border-bottom: 1px solid #fff;
+}
