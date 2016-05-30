@@ -13,15 +13,18 @@ angular.module('portfolio')
     $routeProvider
     .when('/', {
       templateUrl: 'partials/home.html',
-      controller: 'HomeController'
+      controller: 'HomeController',
+      controllerAs: 'homeCtrl',
     })
     .when('/contact', {
       templateUrl: 'partials/contact.html',
-      controller: 'ContactController'
+      controller: 'ContactController',
+      controllerAs: 'contactCtrl'
     })
     .when('/works', {
-      templateUrl: 'partials/work.html',
+      templateUrl: 'partials/works.html',
       controller: 'WorksController',
+      controllerAs: 'worksCtrl',
       resolve: {
         worksResolver: [
           'WorksFactory',
