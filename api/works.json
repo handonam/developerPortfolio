@@ -43,7 +43,7 @@
         "tech": ["CSS3", "HTML5", "jQuery", "Symfony", "PHP", "Google Analytics"]
       },
       {
-        "title": "Instructor Workflow",
+        "title": "Instructors Workflow",
         "description": "We developed an instructor work application that helped us enroll teachers into our platform quickly.",
         "image": {
           "caption": "Form to allow instructors to choose what they want to teach",
