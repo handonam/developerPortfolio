@@ -1,7 +1,5 @@
 'use strict';
 
-var angular = require('angular');
-
 module.exports = [
   '$window', '$location',
   function($window, $location) {
@@ -12,7 +10,7 @@ module.exports = [
         $scope.$on('$locationChangeSuccess', function(){
           $scope.activePath = $location.path();
         });
-        
+
         $scope.paths = [
           {
             name: 'Works',

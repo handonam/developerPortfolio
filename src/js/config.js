@@ -1,8 +1,7 @@
 'use strict';
 
-var app = require('angular').module('portfolio');
-
-app.config([
+angular.module('portfolio')
+.config([
   '$routeProvider', '$locationProvider', '$animateProvider',
   function($routeProvider, $locationProvider, $animateProvider) {
     $locationProvider.html5Mode(true);

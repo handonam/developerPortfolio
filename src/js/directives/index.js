@@ -1,8 +1,7 @@
 'use strict';
 
-var app = require('angular').module('portfolio');
-
-app.directive('bgImage', require('./BgImageDirective'));
-app.directive('bgResize', require('./BgResizeDirective'));
-app.directive('project', require('./ProjectDirective'));
-app.directive('navbar', require('./NavbarDirective'));
+angular.module('portfolio')
+.directive('bgImage', require('./BgImageDirective'))
+.directive('bgResize', require('./BgResizeDirective'))
+.directive('project', require('./ProjectDirective'))
+.directive('navbar', require('./NavbarDirective'));

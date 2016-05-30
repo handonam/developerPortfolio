@@ -36044,10 +36044,6 @@ $provide.value("$locale", {
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 },{}],4:[function(require,module,exports){
-require('./angular');
-module.exports = angular;
-
-},{"./angular":3}],5:[function(require,module,exports){
 'use strict';
 
 require('angular/angular');
@@ -36062,12 +36058,11 @@ require('./config');
 require('./controllers');
 require('./directives');
 
-},{"./config":6,"./constants":7,"./controllers":11,"./directives":16,"./factories":19,"angular-animate/angular-animate":1,"angular-route/angular-route":2,"angular/angular":3}],6:[function(require,module,exports){
+},{"./config":5,"./constants":6,"./controllers":10,"./directives":15,"./factories":18,"angular-animate/angular-animate":1,"angular-route/angular-route":2,"angular/angular":3}],5:[function(require,module,exports){
 'use strict';
 
-var app = require('angular').module('portfolio');
-
-app.config([
+angular.module('portfolio')
+.config([
   '$routeProvider', '$locationProvider', '$animateProvider',
   function($routeProvider, $locationProvider, $animateProvider) {
     $locationProvider.html5Mode(true);
@@ -36102,17 +36097,15 @@ app.config([
     .otherwise({redirectTo: '/'});
 }]);
 
-},{"angular":4}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict';
 
-var app = require('angular').module('portfolio');
-
-app
+angular.module('portfolio')
 .constant('API_ROUTE', {
   WORKS: 'api/works.json',
 });
 
-},{"angular":4}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 'use strict';
 
 module.exports = [
@@ -36121,12 +36114,10 @@ module.exports = [
   }
 ];
 
-},{}],9:[function(require,module,exports){
-arguments[4][8][0].apply(exports,arguments)
-},{"dup":8}],10:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
+arguments[4][7][0].apply(exports,arguments)
+},{"dup":7}],9:[function(require,module,exports){
 'use strict';
-
-var angular = require('angular');
 
 module.exports = [
   '$scope', 'worksResolver', 'ImageLoaderFactory',
@@ -36181,22 +36172,22 @@ module.exports = [
   }
 ];
 
-},{"angular":4}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 'use strict';
 
-var app = require('angular').module('portfolio');
+angular.module('portfolio')
+.controller('HomeController', require('./HomeController'))
+.controller('WorksController', require('./WorksController'))
+.controller('ContactController', require('./ContactController'));
 
-app.controller('HomeController', require('./HomeController'));
-app.controller('WorksController', require('./WorksController'));
-app.controller('ContactController', require('./ContactController'));
-
-},{"./ContactController":8,"./HomeController":9,"./WorksController":10,"angular":4}],12:[function(require,module,exports){
+},{"./ContactController":7,"./HomeController":8,"./WorksController":9}],11:[function(require,module,exports){
 'use strict';
 
 /**
  * Used to place an image as a background style
  */
-module.exports = ['$q',
+module.exports = [
+  '$q',
   function($q) {
     return {
       link: function(scope, $elem, attr) {
@@ -36236,10 +36227,8 @@ module.exports = ['$q',
   }
 ];
 
-},{}],13:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 'use strict';
-
-var angular = require('angular');
 
 module.exports = [
   '$window',
@@ -36275,10 +36264,8 @@ module.exports = [
   }
 ];
 
-},{"angular":4}],14:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
-
-var angular = require('angular');
 
 module.exports = [
   '$window', '$location',
@@ -36290,7 +36277,7 @@ module.exports = [
         $scope.$on('$locationChangeSuccess', function(){
           $scope.activePath = $location.path();
         });
-        
+
         $scope.paths = [
           {
             name: 'Works',
@@ -36307,10 +36294,8 @@ module.exports = [
   }
 ];
 
-},{"angular":4}],15:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 'use strict';
-
-var angular = require('angular');
 
 module.exports = [
   '$window',
@@ -36318,23 +36303,21 @@ module.exports = [
     return {
       scope: {},
       link: function(scope, $elem, attr) {
-        
       }
     };
   }
 ];
 
-},{"angular":4}],16:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 'use strict';
 
-var app = require('angular').module('portfolio');
+angular.module('portfolio')
+.directive('bgImage', require('./BgImageDirective'))
+.directive('bgResize', require('./BgResizeDirective'))
+.directive('project', require('./ProjectDirective'))
+.directive('navbar', require('./NavbarDirective'));
 
-app.directive('bgImage', require('./BgImageDirective'));
-app.directive('bgResize', require('./BgResizeDirective'));
-app.directive('project', require('./ProjectDirective'));
-app.directive('navbar', require('./NavbarDirective'));
-
-},{"./BgImageDirective":12,"./BgResizeDirective":13,"./NavbarDirective":14,"./ProjectDirective":15,"angular":4}],17:[function(require,module,exports){
+},{"./BgImageDirective":11,"./BgResizeDirective":12,"./NavbarDirective":13,"./ProjectDirective":14}],16:[function(require,module,exports){
 'use strict';
 
 /**
@@ -36365,7 +36348,7 @@ module.exports = [
   }
 ];
 
-},{}],18:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 'use strict';
 
 /**
@@ -36385,12 +36368,11 @@ module.exports = [
   }
 ];
 
-},{}],19:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 'use strict';
 
-var app = require('angular').module('portfolio');
+angular.module('portfolio')
+.factory('WorksFactory', require('./WorksFactory'))
+.factory('ImageLoaderFactory', require('./ImageLoaderFactory'));
 
-app.factory('WorksFactory', require('./WorksFactory'));
-app.factory('ImageLoaderFactory', require('./ImageLoaderFactory'));
-
-},{"./ImageLoaderFactory":17,"./WorksFactory":18,"angular":4}]},{},[5]);
+},{"./ImageLoaderFactory":16,"./WorksFactory":17}]},{},[4]);

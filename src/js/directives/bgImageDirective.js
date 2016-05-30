@@ -3,7 +3,8 @@
 /**
  * Used to place an image as a background style
  */
-module.exports = ['$q',
+module.exports = [
+  '$q',
   function($q) {
     return {
       link: function(scope, $elem, attr) {

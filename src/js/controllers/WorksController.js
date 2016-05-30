@@ -1,7 +1,5 @@
 'use strict';
 
-var angular = require('angular');
-
 module.exports = [
   '$scope', 'worksResolver', 'ImageLoaderFactory',
   function ($scope, worksResolver, ImageLoaderFactory) {

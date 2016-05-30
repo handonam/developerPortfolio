@@ -1,8 +1,6 @@
 'use strict';
 
-var app = require('angular').module('portfolio');
-
-app
+angular.module('portfolio')
 .constant('API_ROUTE', {
   WORKS: 'api/works.json',
 });
