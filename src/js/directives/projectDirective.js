@@ -5,8 +5,8 @@ module.exports = [
   function($window) {
     return {
       scope: {},
-      link: function(scope, $elem, attr) {
-      }
+      controllerAs: 'project',
+      link: function($scope, $elem, attr) {}
     };
   }
 ];

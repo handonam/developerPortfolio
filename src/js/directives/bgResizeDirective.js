@@ -4,8 +4,9 @@ module.exports = [
   '$window',
   function($window) {
     return {
-      scope: {},
-      link: function(scope, $elem, attr) {
+      $scope: {},
+      controllerAs: 'bgResize',
+      link: function($scope, $elem, attr) {
         var heightPercentage = (attr.bgSize || 100) / 100;
 
         if (attr.imgSrc) {
@@ -17,17 +18,17 @@ module.exports = [
           });
         }
 
-        scope.onResize = function() {
+        $scope.onResize = function() {
           $elem.css({
             'min-height': ($window.innerHeight * heightPercentage) + 'px' ,
             'width': '100%'
           });
         };
 
-        scope.onResize();
+        $scope.onResize();
         angular.element($window).bind('resize', function() {
-          scope.onResize();
-          scope.$apply();
+          $scope.onResize();
+          $scope.$apply();
         });
       }
     };

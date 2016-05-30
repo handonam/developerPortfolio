@@ -7,7 +7,8 @@ module.exports = [
   '$q',
   function($q) {
     return {
-      link: function(scope, $elem, attr) {
+      controllerAs: 'bgImage',
+      link: function($scope, $elem, attr) {
         if (attr.img) {
           var deferred = $q.defer();
 

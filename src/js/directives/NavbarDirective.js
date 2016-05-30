@@ -5,13 +5,17 @@ module.exports = [
   function($window, $location) {
     return {
       scope: true,
-      link: function($scope, $elem, attr) {
-        $scope.activePath = $location.path();
+      controllerAs: 'navbar',
+      controller: ['$scope', function($scope) {
+        var me = this;
+        me.activePath = $location.path();
+
+        // watch the location change, which happens outside of this directive.
         $scope.$on('$locationChangeSuccess', function(){
-          $scope.activePath = $location.path();
+          me.activePath = $location.path();
         });
 
-        $scope.paths = [
+        me.paths = [
           {
             name: 'Works',
             url: '/works'
@@ -21,7 +25,8 @@ module.exports = [
             url: '/contact'
           }
         ];
-      },
+      }],
+      link: function($scope, $elem, attr) {},
       templateUrl: '/partials/directives/navbar.html'
     };
   }

@@ -36190,7 +36190,8 @@ module.exports = [
   '$q',
   function($q) {
     return {
-      link: function(scope, $elem, attr) {
+      controllerAs: 'bgImage',
+      link: function($scope, $elem, attr) {
         if (attr.img) {
           var deferred = $q.defer();
 
@@ -36234,8 +36235,9 @@ module.exports = [
   '$window',
   function($window) {
     return {
-      scope: {},
-      link: function(scope, $elem, attr) {
+      $scope: {},
+      controllerAs: 'bgResize',
+      link: function($scope, $elem, attr) {
         var heightPercentage = (attr.bgSize || 100) / 100;
 
         if (attr.imgSrc) {
@@ -36247,17 +36249,17 @@ module.exports = [
           });
         }
 
-        scope.onResize = function() {
+        $scope.onResize = function() {
           $elem.css({
             'min-height': ($window.innerHeight * heightPercentage) + 'px' ,
             'width': '100%'
           });
         };
 
-        scope.onResize();
+        $scope.onResize();
         angular.element($window).bind('resize', function() {
-          scope.onResize();
-          scope.$apply();
+          $scope.onResize();
+          $scope.$apply();
         });
       }
     };
@@ -36272,13 +36274,17 @@ module.exports = [
   function($window, $location) {
     return {
       scope: true,
-      link: function($scope, $elem, attr) {
-        $scope.activePath = $location.path();
+      controllerAs: 'navbar',
+      controller: ['$scope', function($scope) {
+        var me = this;
+        me.activePath = $location.path();
+
+        // watch the location change, which happens outside of this directive.
         $scope.$on('$locationChangeSuccess', function(){
-          $scope.activePath = $location.path();
+          me.activePath = $location.path();
         });
 
-        $scope.paths = [
+        me.paths = [
           {
             name: 'Works',
             url: '/works'
@@ -36288,7 +36294,8 @@ module.exports = [
             url: '/contact'
           }
         ];
-      },
+      }],
+      link: function($scope, $elem, attr) {},
       templateUrl: '/partials/directives/navbar.html'
     };
   }
@@ -36302,8 +36309,8 @@ module.exports = [
   function($window) {
     return {
       scope: {},
-      link: function(scope, $elem, attr) {
-      }
+      controllerAs: 'project',
+      link: function($scope, $elem, attr) {}
     };
   }
 ];
