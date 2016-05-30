@@ -36113,13 +36113,19 @@ angular.module('portfolio')
 
 module.exports = [
   '$scope',
+  function ($scope) {}
+];
+
+},{}],8:[function(require,module,exports){
+'use strict';
+
+module.exports = [
+  '$scope',
   function ($scope) {
   }
 ];
 
-},{}],8:[function(require,module,exports){
-arguments[4][7][0].apply(exports,arguments)
-},{"dup":7}],9:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 'use strict';
 
 module.exports = [
