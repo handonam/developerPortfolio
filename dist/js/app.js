@@ -36058,7 +36058,7 @@ require('./config');
 require('./controllers');
 require('./directives');
 
-},{"./config":5,"./constants":6,"./controllers":10,"./directives":15,"./factories":18,"angular-animate/angular-animate":1,"angular-route/angular-route":2,"angular/angular":3}],5:[function(require,module,exports){
+},{"./config":5,"./constants":6,"./controllers":10,"./directives":14,"./factories":17,"angular-animate/angular-animate":1,"angular-route/angular-route":2,"angular/angular":3}],5:[function(require,module,exports){
 'use strict';
 
 angular.module('portfolio')
@@ -36112,25 +36112,17 @@ angular.module('portfolio')
 'use strict';
 
 module.exports = [
-  '$scope',
-  function ($scope) {}
+  function() {}
 ];
 
 },{}],8:[function(require,module,exports){
-'use strict';
-
-module.exports = [
-  '$scope',
-  function ($scope) {
-  }
-];
-
-},{}],9:[function(require,module,exports){
+arguments[4][7][0].apply(exports,arguments)
+},{"dup":7}],9:[function(require,module,exports){
 'use strict';
 
 module.exports = [
   'worksResolver', 'ImageLoaderFactory',
-  function (worksResolver, ImageLoaderFactory) {
+  function(worksResolver, ImageLoaderFactory) {
     var me = this;
     me.works = worksResolver;
     me.isLoading = false;
@@ -36165,7 +36157,7 @@ module.exports = [
       me.isLoading = true;
 
       var imageUrl = me.works[workId].accomplishments[me.counter[workId] - 1].image.url;
-      ImageLoaderFactory.loadImage(imageUrl).then(function(){
+      ImageLoaderFactory.loadImage(imageUrl).then(function() {
         me.isLoading = false;
         me.counter[workId]--;
       });
@@ -36174,7 +36166,7 @@ module.exports = [
       me.isLoading = true;
 
       var imageUrl = me.works[workId].accomplishments[me.counter[workId] + 1].image.url;
-      ImageLoaderFactory.loadImage(imageUrl).then(function(){
+      ImageLoaderFactory.loadImage(imageUrl).then(function() {
         me.isLoading = false;
         me.counter[workId]++;
       });
@@ -36314,27 +36306,12 @@ module.exports = [
 },{}],14:[function(require,module,exports){
 'use strict';
 
-module.exports = [
-  '$window',
-  function($window) {
-    return {
-      scope: {},
-      controllerAs: 'project',
-      link: function($scope, $elem, attr) {}
-    };
-  }
-];
-
-},{}],15:[function(require,module,exports){
-'use strict';
-
 angular.module('portfolio')
 .directive('bgImage', require('./BgImageDirective'))
 .directive('bgResize', require('./BgResizeDirective'))
-.directive('project', require('./ProjectDirective'))
 .directive('navbar', require('./NavbarDirective'));
 
-},{"./BgImageDirective":11,"./BgResizeDirective":12,"./NavbarDirective":13,"./ProjectDirective":14}],16:[function(require,module,exports){
+},{"./BgImageDirective":11,"./BgResizeDirective":12,"./NavbarDirective":13}],15:[function(require,module,exports){
 'use strict';
 
 /**
@@ -36365,7 +36342,7 @@ module.exports = [
   }
 ];
 
-},{}],17:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 'use strict';
 
 /**
@@ -36385,11 +36362,11 @@ module.exports = [
   }
 ];
 
-},{}],18:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 'use strict';
 
 angular.module('portfolio')
 .factory('WorksFactory', require('./WorksFactory'))
 .factory('ImageLoaderFactory', require('./ImageLoaderFactory'));
 
-},{"./ImageLoaderFactory":16,"./WorksFactory":17}]},{},[4]);
+},{"./ImageLoaderFactory":15,"./WorksFactory":16}]},{},[4]);

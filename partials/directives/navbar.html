@@ -3,7 +3,7 @@
   <ul class="Nav__List">
     <li class="Nav__Item" ng-class="{'Nav__Item--Active': (path.url === navbar.activePath)}"
       ng-repeat="path in navbar.paths">
-      <a class="u-White u-Undecorate" href="{{ path.url }}">{{ path.name }}</a>
+      <a class="u-White u-Undecorate" href="{{ ::path.url }}">{{ ::path.name }}</a>
     </li>
   </ul>
 </nav>

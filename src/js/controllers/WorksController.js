@@ -2,7 +2,7 @@
 
 module.exports = [
   'worksResolver', 'ImageLoaderFactory',
-  function (worksResolver, ImageLoaderFactory) {
+  function(worksResolver, ImageLoaderFactory) {
     var me = this;
     me.works = worksResolver;
     me.isLoading = false;
@@ -37,7 +37,7 @@ module.exports = [
       me.isLoading = true;
 
       var imageUrl = me.works[workId].accomplishments[me.counter[workId] - 1].image.url;
-      ImageLoaderFactory.loadImage(imageUrl).then(function(){
+      ImageLoaderFactory.loadImage(imageUrl).then(function() {
         me.isLoading = false;
         me.counter[workId]--;
       });
@@ -46,7 +46,7 @@ module.exports = [
       me.isLoading = true;
 
       var imageUrl = me.works[workId].accomplishments[me.counter[workId] + 1].image.url;
-      ImageLoaderFactory.loadImage(imageUrl).then(function(){
+      ImageLoaderFactory.loadImage(imageUrl).then(function() {
         me.isLoading = false;
         me.counter[workId]++;
       });

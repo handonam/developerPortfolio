@@ -18,7 +18,9 @@ module.exports = function(config) {
       'node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'src/js/**/*.js',
-      'test/js/**/*.spec.js'
+      'test/js/**/*.spec.js',
+      'partials/directives/**/*.html',
+      {pattern: 'images/**/*.jpg', watched: false, included: false, served: true}
     ],
 
 
@@ -32,10 +34,12 @@ module.exports = function(config) {
       watch: true,
       debug: true
     },
+
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-     'src/js/**/*.js': ['browserify']
+     'src/js/**/*.js': ['browserify'],
+     'partials/**/*.html': 'ng-html2js'
     },
 
 
@@ -64,7 +68,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'Firefox', 'Safari', 'IE', 'ChromeCanary', 'Opera'],
+    browsers: ['Chrome', 'Firefox', 'Safari', 'IE', 'ChromeCanary', 'Opera', 'PhantomJS'],
 
 
     // Continuous Integration mode
